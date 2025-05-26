@@ -2,166 +2,121 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Por que estudar programação?</title>
   <link rel="stylesheet" href="style.css" />
-  <script>
-    // Alternar abas
-    function mostrarAba(id) {
-      const abas = document.querySelectorAll(".aba");
-      abas.forEach(aba => aba.style.display = "none");
-      const aba = document.getElementById(id);
-      aba.style.display = "block";
-      aba.style.opacity = 0;
-      setTimeout(() => { aba.style.opacity = 1; }, 10);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-
-    // Tema escuro
-    function toggleTema() {
-      const body = document.body;
-      body.classList.toggle('dark');
-      // Salvar preferência
-      if(body.classList.contains('dark')) {
-        localStorage.setItem('tema', 'dark');
-      } else {
-        localStorage.setItem('tema', 'light');
-      }
-    }
-
-    // Verificar tema salvo
-    window.onload = () => {
-      const tema = localStorage.getItem('tema');
-      if(tema === 'dark') {
-        document.body.classList.add('dark');
-      }
-      mostrarAba('principal');
-    }
-
-    // Validação simples do formulário de contato
-    function validarContato(event) {
-      event.preventDefault();
-      const nome = document.getElementById('nome').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const mensagem = document.getElementById('mensagem').value.trim();
-      if(nome === '' || email === '' || mensagem === '') {
-        alert('Por favor, preencha todos os campos.');
-        return false;
-      }
-      // Simular envio
-      alert(`Obrigado, ${nome}! Sua mensagem foi enviada.`);
-      document.getElementById('form-contato').reset();
-      return true;
-    }
-  </script>
 </head>
 <body>
 
+  <header>
+    <h1>Por que estudar programação?</h1>
+    <p>Descubra os motivos para aprender essa habilidade essencial do século XXI</p>
+    <img src="https://thumbs.dreamstime.com/b/crescente-demanda-29221120.jpg" alt="Pessoa programando" />
+  </header>
+
   <nav>
-    <ul>
-      <li><a href="#" onclick="mostrarAba('principal')">Início</a></li>
-      <li><a href="#" onclick="mostrarAba('salarios')">Salários</a></li>
-      <li><a href="#" onclick="mostrarAba('flexibilidade')">Flexibilidade</a></li>
-      <li><a href="#" onclick="mostrarAba('curiosidades')">Curiosidades</a></li>
-      <li><a href="#" onclick="mostrarAba('site')">Por que ter um site?</a></li>
-      <li><a href="#" onclick="mostrarAba('contato')">Contato</a></li>
-      <li><button id="btnTema" onclick="toggleTema()" aria-label="Alternar tema escuro" title="Alternar tema escuro">🌓</button></li>
-    </ul>
+    <button class="tab-btn active" data-tab="site">Porque ter um site</button>
+    <button class="tab-btn" data-tab="salarios">Salários</button>
+    <button class="tab-btn" data-tab="flexibilidade">Flexibilidade no trabalho</button>
   </nav>
 
-  <div id="principal" class="aba">
-    <header>
-      <h1>Por que estudar programação?</h1>
-      <p>Descubra os motivos para aprender essa habilidade essencial do século XXI</p>
-      <img src="https://thumbs.dreamstime.com/b/crescente-demanda-29221120.jpg" alt="Pessoa programando" />
-    </header>
-
-    <main>
-      <section>
-        <h2>Alta demanda no mercado</h2>
-        <img src="https://thumbs.dreamstime.com/b/crescente-demanda-29221120.jpg" alt="Gráfico de crescimento" />
-        <p>Empresas de todos os setores estão em busca de profissionais capazes de criar e manter sistemas, sites e aplicativos.</p>
-      </section>
-
-      <section>
-        <h2>Estímulo ao raciocínio lógico</h2>
-        <img src="https://media.istockphoto.com/id/1948997446/pt/foto/thinking-about-questions-and-getting-ideas-human-head-silhouette-and-gears.jpg" alt="Cabeça com engrenagens" />
-        <p>Aprender a programar ajuda a desenvolver o pensamento crítico e resolver problemas com eficiência.</p>
-      </section>
-
-      <section>
-        <h2>Criar suas próprias ideias</h2>
-        <img src="https://cdn.pixabay.com/photo/2016/01/19/15/05/idea-1149982_1280.jpg" alt="Lâmpada representando ideias" />
-        <p>Com programação, você pode transformar ideias em realidade: sites, apps, jogos e muito mais.</p>
-      </section>
-
-      <section>
-        <h2>Como começar?</h2>
-        <p>Você pode começar aprendendo linguagens como HTML, CSS, JavaScript e Python. Existem muitos cursos gratuitos online!</p>
-        <a class="botao" href="https://www.cursoemvideo.com/" target="_blank">Acessar cursos gratuitos</a>
-      </section>
-    </main>
-  </div>
-
-  <div id="salarios" class="aba" style="display:none;">
-    <section>
-      <h2>Bons Salários</h2>
-      <img src="https://img.freepik.com/fotos-gratis/png-proposta-de-negocio-de-compra-de-maos-segurando-dinheiro_53876-143248.jpg" alt="Pessoa segurando dinheiro" />
-      <p>Programadores estão entre os profissionais mais bem pagos, com oportunidades no Brasil e no exterior.</p>
-    </section>
-  </div>
-
-  <div id="flexibilidade" class="aba" style="display:none;">
-    <section>
-      <h2>Flexibilidade no Trabalho</h2>
-      <img src="https://marketing-assets-benefits.ifood.com.br/cms/IFB_Flexibilidade_no_trabalho_SEO_01229a1f16.webp" alt="Trabalho remoto" />
-      <p>Com programação, você pode trabalhar remotamente de qualquer lugar do mundo, como freelancer ou contratado.</p>
-    </section>
-  </div>
-
-  <div id="site" class="aba" style="display:none;">
-    <section>
-      <h2>Por que ter um site?</h2>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmtLaJqdSp0RDZ2QEpW0atrnKHuLe0VOFYmg&s" alt="Ilustração de site" />
-      <p>Ter um site é essencial para apresentar seu portfólio, atrair oportunidades e construir sua presença online.</p>
-    </section>
-  </div>
-
-  <div id="curiosidades" class="aba" style="display:none;">
-    <section>
-      <h2>Curiosidades e Animações</h2>
-      <ul>
-        <li>💡 O primeiro programa foi escrito por Ada Lovelace no século 19!</li>
-        <li>👨‍💻 O "Hello World" é geralmente o primeiro código que se aprende.</li>
-        <li>🔢 Programar é mais lógica do que matemática.</li>
+  <main>
+    <section id="site" class="tab-content active">
+      <h2>Porque ter um site</h2>
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmtLaJqdSp0RDZ2QEpW0atrnKHuLe0VOFYmg&s"
+        alt="Por que ter um site"
+        class="gif-animado"
+      />
+      <ul class="curiosidades">
+        <li>Ter um site aumenta a credibilidade da sua marca perante clientes e parceiros.</li>
+        <li>Um site funciona 24h por dia, vendendo ou divulgando sua ideia mesmo enquanto você dorme.</li>
+        <li>Sites otimizados para SEO atraem visitantes organicamente, sem gastar com anúncios.</li>
+        <li>Você pode personalizar seu site para refletir sua identidade e valores únicos.</li>
+        <li>Um site é o principal canal para vendas online, expandindo seu mercado sem limites geográficos.</li>
+        <li>Permite apresentar seu portfólio e trabalhos anteriores de forma visual e organizada.</li>
+        <li>Ajuda a construir uma base de contatos e leads para ações futuras de marketing.</li>
+        <li>A maioria dos consumidores pesquisa online antes de comprar; não ter site pode perder clientes.</li>
+        <li>Com um site responsivo, você alcança usuários de celulares, tablets e desktops.</li>
+        <li>Um site pode integrar várias ferramentas, como blogs, lojas, fóruns e chats ao vivo.</li>
       </ul>
-      <img src="https://visme.co/blog/wp-content/uploads/2020/03/animation-software-header.gif" alt="Animação 1" />
-      <img src="https://i.gifer.com/OL9O.gif" alt="Animação 2" />
     </section>
-  </div>
 
-  <div id="contato" class="aba" style="display:none;">
-    <section>
-      <h2>Contato</h2>
-      <form id="form-contato" onsubmit="validarContato(event)">
-        <label for="nome">Nome:</label><br/>
-        <input type="text" id="nome" name="nome" placeholder="Seu nome" required /><br/><br/>
-        <label for="email">Email:</label><br/>
-        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required /><br/><br/>
-        <label for="mensagem">Mensagem:</label><br/>
-        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem..." required></textarea><br/><br/>
-        <button type="submit" class="botao">Enviar</button>
-      </form>
-      <p>Ou me contate diretamente: 📧 astrovictor59@gmail.com | 📱 (41) 99708-8269</p>
+    <section id="salarios" class="tab-content">
+      <h2>Salários</h2>
+      <img
+        src="https://i.gifer.com/OL9O.gif"
+        alt="Salários em programação"
+        class="gif-animado"
+      />
+      <ul class="curiosidades">
+        <li>Profissionais de TI, especialmente programadores, estão entre os mais bem pagos do mercado.</li>
+        <li>Salários de programadores no Brasil podem variar de R$3.000 a R$15.000 ou mais, dependendo da experiência.</li>
+        <li>Muitos desenvolvedores trabalham remotamente para empresas internacionais e recebem em dólar ou euro.</li>
+        <li>Dominar linguagens modernas como Python, JavaScript e Go pode aumentar o salário significativamente.</li>
+        <li>Áreas especializadas, como inteligência artificial e segurança da informação, pagam ainda melhor.</li>
+        <li>Programadores freelancers podem definir seus próprios preços e aumentar ganhos conforme portfólio.</li>
+        <li>Empresas de tecnologia costumam oferecer benefícios além do salário, como bônus e participação nos lucros.</li>
+        <li>Em startups, a remuneração pode incluir ações da empresa, valorizando o trabalho no longo prazo.</li>
+        <li>A demanda constante faz com que salários subam, especialmente para quem se atualiza com novas tecnologias.</li>
+        <li>Cursos e certificações reconhecidas no mercado ajudam a negociar melhores salários.</li>
+      </ul>
     </section>
+
+    <section id="flexibilidade" class="tab-content">
+      <h2>Flexibilidade no trabalho</h2>
+      <img
+        src="https://visme.co/blog/wp-content/uploads/2020/03/animation-software-header.gif"
+        alt="Flexibilidade no trabalho"
+        class="gif-animado"
+      />
+      <ul class="curiosidades">
+        <li>Muitos programadores têm a possibilidade de trabalhar remotamente, de qualquer lugar do mundo.</li>
+        <li>Horários flexíveis ajudam na qualidade de vida, permitindo adaptar o trabalho à rotina pessoal.</li>
+        <li>O trabalho freelance é muito comum, dando autonomia e liberdade para escolher projetos.</li>
+        <li>Empresas que valorizam home office tendem a ser mais inovadoras e abertas a novas ideias.</li>
+        <li>Você pode combinar programação com outros interesses, como design ou marketing, criando seu próprio nicho.</li>
+        <li>Flexibilidade facilita continuar estudos e especializações enquanto trabalha.</li>
+        <li>Ambientes remotos incentivam uso de tecnologias colaborativas modernas, melhorando a comunicação.</li>
+        <li>Programadores podem trabalhar em equipes internacionais, ampliando networking global.</li>
+        <li>A flexibilidade favorece a inclusão de pessoas com diferentes necessidades e estilos de vida.</li>
+        <li>Com disciplina, a flexibilidade aumenta produtividade e satisfação no trabalho.</li>
+      </ul>
+    </section>
+  </main>
+
+  <div class="contato-fixo" tabindex="0" aria-label="Contato">
+    <strong>Contato</strong>
+    <span>Email: <a href="mailto:astrovictor59@gmail.com" style="color:#fff;text-decoration:underline;">astrovictor59@gmail.com</a></span>
+    <span>Telefone: <a href="tel:+55419997088269" style="color:#fff;text-decoration:underline;">41 99708-8269</a></span>
   </div>
 
   <footer>
-    <p>Feito com ❤️ por Victor Hugo - 1B | Para a professora Isabela Haddad</p>
+    <p class="footer-text">Feito com ❤️ para fins educacionais por Victor Hugo 1b - 2025</p>
     <div class="redes">
-      <a href="#" target="_blank">Instagram</a> | <a href="#" target="_blank">GitHub</a> | <a href="#" target="_blank">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">Instagram</a> |
+      <a href="#" target="_blank" rel="noopener">GitHub</a> |
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </footer>
+
+  <script>
+    // Controle das abas
+    const buttons = document.querySelectorAll('nav button');
+    const sections = document.querySelectorAll('main section');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove classes active
+        buttons.forEach(btn => btn.classList.remove('active'));
+        sections.forEach(sec => sec.classList.remove('active'));
+
+        // Adiciona active ao clicado e seu conteúdo
+        button.classList.add('active');
+        document.getElementById(button.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
