@@ -1,154 +1,250 @@
-/* Reset e base */
-* {
-  box-sizing: border-box;
-}
+/* Estilos gerais e tema claro */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   color: #333;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-.dark-theme {
-  background-color: #121212;
-  color: #eee;
+nav {
+  background-color: #222;
+  padding: 10px;
+  text-align: center;
+  transition: background-color 0.5s ease;
 }
 
-a {
-  color: #005eff;
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav a {
+  color: white;
   text-decoration: none;
+  font-weight: bold;
   transition: color 0.3s ease;
 }
-a:hover {
-  color: #0044cc;
+
+nav a:hover {
+  color: #79aaff;
 }
 
-/* Header */
 header {
   background-color: #1f1f1f;
   color: white;
   text-align: center;
   padding: 40px 20px;
-  border-radius: 0 0 15px 15px;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
+
 header img {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
   margin-top: 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  transition: filter 0.5s ease;
 }
 
-/* Navigation */
-nav {
-  background-color: #222;
-  padding: 10px 0;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 15px;
-}
-nav li {
-  display: inline;
-}
-nav button.tab-btn {
-  background: none;
-  border: none;
-  color: white;
-  font-weight: 600;
-  font-size: 16px;
-  cursor: pointer;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-}
-nav button.tab-btn:hover,
-nav button.tab-btn.active {
-  background-color: #005eff;
-  color: white;
-  box-shadow: 0 0 10px #005eff;
-}
-
-nav .theme-toggle {
-  cursor: pointer;
-  font-size: 22px;
-  user-select: none;
-  padding: 6px 12px;
-  border-radius: 8px;
-  background-color: #444;
-  transition: background-color 0.3s ease;
-}
-nav .theme-toggle:hover {
-  background-color: #005eff;
-  color: white;
-}
-
-/* Main content */
 main {
+  padding: 20px;
   max-width: 900px;
-  margin: 30px auto;
-  padding: 0 20px 50px;
+  margin: auto;
 }
 
-/* Sections (abas) */
-.tab-content {
-  display: none;
+section {
   background: white;
-  padding: 25px 30px;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-  transition: opacity 0.5s ease;
-}
-.tab-content.active {
-  display: block;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-.tab-content img {
+section img {
   max-width: 100%;
   height: auto;
-  margin: 20px 0;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  margin: 15px 0;
+  transition: filter 0.5s ease;
 }
 
-.tab-content ul {
-  list-style: inside disc;
-  margin-top: 15px;
-  line-height: 1.6;
+.botao {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #005eff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-.tab-content ul li {
-  margin-bottom: 10px;
-  font-size: 16px;
+.botao:hover {
+  background-color: #0044cc;
+  cursor: pointer;
 }
 
-/* Footer */
 footer {
-  background-color: #ddd;
   text-align: center;
-  padding: 25px 20px;
+  padding: 20px;
+  background-color: #ddd;
   font-size: 14px;
-  border-radius: 15px 15px 0 0;
-  color: #444;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
+
+footer .redes {
+  margin-top: 10px;
+}
+
+footer .redes a {
+  color: #333;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer .redes a:hover {
+  text-decoration: underline;
+  color: #005eff;
+}
+
+/* Contato fixo no canto inferior direito */
+#contato-fixo {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background: #005eff;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+#contato-fixo:hover {
+  background-color: #0044cc;
+  cursor: pointer;
+}
+
+/* Tema escuro */
+.dark-theme {
+  background-color: #121212;
+  color: #eee;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.dark-theme nav {
+  background-color: #111;
+}
+
+.dark-theme nav a {
+  color: #ccc;
+}
+
+.dark-theme nav a:hover {
+  color: #79aaff;
+}
+
+.dark-theme header {
+  background-color: #000;
+  color: #eee;
+}
+
+.dark-theme header img {
+  filter: brightness(0.85);
+}
+
+.dark-theme main {
+  background-color: #121212;
+}
+
+.dark-theme section {
+  background-color: #1e1e1e;
+  color: #ddd;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+.dark-theme section img {
+  filter: brightness(0.9);
+}
+
+.dark-theme a {
+  color: #79aaff;
+}
+
+.dark-theme a:hover {
+  color: #c2d1ff;
+}
+
+.dark-theme .botao {
+  background-color: #3399ff;
+  color: #eee;
+}
+
+.dark-theme .botao:hover {
+  background-color: #2277ee;
+  cursor: pointer;
+}
+
 .dark-theme footer {
   background-color: #222;
   color: #bbb;
 }
 
-footer .contato a {
-  color: #005eff;
-  font-weight:
+.dark-theme footer .redes a {
+  color: #79aaff;
+}
+
+.dark-theme footer .redes a:hover {
+  color: #c2d1ff;
+}
+
+/* Transição suave para tudo */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Emoji de troca de tema */
+#toggle-theme {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  font-size: 26px;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+  z-index: 1001;
+}
+
+#toggle-theme:hover {
+  color: #3399ff;
+}
+
+/* Ajustes para responsividade */
+@media (max-width: 600px) {
+  nav li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  #contato-fixo {
+    font-size: 12px;
+    padding: 10px 14px;
+  }
+
+  #toggle-theme {
+    font-size: 22px;
+    top: 10px;
+    right: 10px;
+  }
+}
