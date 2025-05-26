@@ -3,27 +3,26 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   color: #333;
-  position: relative;
-}
-
-/* Dedicatoria no canto superior direito */
-.dedicatoria {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #fff;
-  padding: 8px 12px;
-  border-radius: 8px;
-  font-size: 13px;
-  font-style: italic;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-  z-index: 10;
+  overflow-x: hidden; /* Evita scroll horizontal */
 }
 
 nav {
   background-color: #222;
   padding: 10px;
   text-align: center;
+  animation: slideDown 0.7s ease forwards;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 nav ul {
@@ -41,11 +40,11 @@ nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #00aaff;
+  color: #005eff;
 }
 
 header {
@@ -53,6 +52,8 @@ header {
   color: white;
   text-align: center;
   padding: 40px 20px;
+  animation: fadeIn 1.2s ease forwards;
+  opacity: 0;
 }
 
 header img {
@@ -60,11 +61,12 @@ header img {
   height: auto;
   border-radius: 10px;
   margin-top: 20px;
+  animation: pulse 4s ease-in-out infinite;
 }
 
 main {
   padding: 20px;
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
 }
 
@@ -74,6 +76,14 @@ section {
   margin-bottom: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+  transform: translateY(20px);
+}
+
+section:nth-child(odd) {
+  animation-delay: 0.5s;
 }
 
 section img {
@@ -81,6 +91,7 @@ section img {
   height: auto;
   border-radius: 10px;
   margin: 15px 0;
+  animation: pulse 6s ease-in-out infinite;
 }
 
 .botao {
@@ -92,11 +103,26 @@ section img {
   border-radius: 8px;
   margin-top: 10px;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .botao:hover {
   background-color: #0044cc;
+  transform: scale(1.05);
+}
+
+ul {
+  padding-left: 20px;
+}
+
+blockquote {
+  border-left: 4px solid #005eff;
+  padding-left: 10px;
+  font-style: italic;
+  color: #555;
+  margin: 10px 0;
+  background-color: #f0f8ff;
+  border-radius: 5px;
 }
 
 footer {
@@ -104,6 +130,9 @@ footer {
   padding: 20px;
   background-color: #ddd;
   font-size: 14px;
+  position: relative;
+  animation: fadeIn 1.5s ease forwards;
+  opacity: 0;
 }
 
 footer .redes {
@@ -114,29 +143,35 @@ footer .redes a {
   color: #333;
   margin: 0 10px;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 footer .redes a:hover {
   text-decoration: underline;
-}
-
-/* Estilo para links dentro de seções */
-section a {
   color: #005eff;
-  text-decoration: none;
 }
 
-section a:hover {
-  text-decoration: underline;
+/* Animações definidas */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
-/* Estilo específico para seção de contato */
-#contato p {
-  font-size: 16px;
-  margin: 10px 0;
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-#contato a {
-  color: #005eff;
-  font-weight: bold;
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(100%);
+  }
+  50% {
+    transform: scale(1.03);
+    filter: brightness(110%);
+  }
 }
