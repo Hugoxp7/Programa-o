@@ -2,22 +2,20 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Por que estudar programação?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programação: Por que Estudar?</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Emoji botão para troca de tema -->
-  <div id="toggle-theme" title="Alternar tema">🌙</div>
+  <div id="toggle-theme">🌙</div>
 
   <nav>
     <ul class="tabs">
-      <li><button class="tab-btn active" data-tab="aba-mercado">Alta Demanda</button></li>
-      <li><button class="tab-btn" data-tab="aba-salarios">Salários</button></li>
-      <li><button class="tab-btn" data-tab="aba-flexibilidade">Flexibilidade</button></li>
-      <li><button class="tab-btn" data-tab="aba-site">Porque ter um site?</button></li>
-      <li><button class="tab-btn" data-tab="aba-contato">Contato</button></li>
+      <li><button class="tab-btn active" data-tab="intro">Início</button></li>
+      <li><button class="tab-btn" data-tab="salarios">Salários</button></li>
+      <li><button class="tab-btn" data-tab="flexibilidade">Flexibilidade</button></li>
+      <li><button class="tab-btn" data-tab="sites">Por que ter um site?</button></li>
+      <li><button class="tab-btn" data-tab="contato">Contato</button></li>
     </ul>
   </nav>
 
@@ -27,124 +25,93 @@
   </header>
 
   <main>
-    <!-- Conteúdos das abas -->
-    <section id="aba-mercado" class="tab-content active">
-      <h2>Alta Demanda no Mercado</h2>
-      <img src="https://thumbs.dreamstime.com/b/crescente-demanda-29221120.jpg" alt="Gráfico de crescimento" />
+    <section id="intro" class="tab-content active">
+      <h2>Introdução</h2>
+      <p>Aprender programação abre portas para um mercado aquecido, salários competitivos, flexibilidade de trabalho e desenvolvimento de projetos próprios. Vamos explorar mais!</p>
+    </section>
+
+    <section id="salarios" class="tab-content">
+      <h2>Salários</h2>
+      <p>10 curiosidades sobre salários de programadores:</p>
+      <ol>
+        <li>Programadores full stack estão entre os mais bem pagos.</li>
+        <li>Salários são maiores com domínio de mais linguagens.</li>
+        <li>Certificações aumentam o valor do profissional.</li>
+        <li>Programadores mobile ganham muito no exterior.</li>
+        <li>Empresas valorizam soft skills junto com técnicas.</li>
+        <li>Freelancers podem ultrapassar CLTs em renda.</li>
+        <li>Desenvolvedores web têm alta procura.</li>
+        <li>Mercado internacional paga em dólar ou euro.</li>
+        <li>Benefícios complementam bons salários.</li>
+        <li>Remuneração cresce com experiência.</li>
+      </ol>
+    </section>
+
+    <section id="flexibilidade" class="tab-content">
+      <h2>Flexibilidade</h2>
+      <p>10 curiosidades sobre a flexibilidade na área:</p>
       <ul>
-        <li>1. Empresas buscam profissionais que criam sistemas.</li>
-        <li>2. A tecnologia está presente em todos os setores.</li>
-        <li>3. A demanda continua crescendo com a transformação digital.</li>
-        <li>4. Desenvolvedores front-end e back-end são requisitados.</li>
-        <li>5. Profissões de TI são essenciais para o futuro.</li>
-        <li>6. Programadores atuam em startups, grandes corporações e governo.</li>
-        <li>7. Oportunidades remotas aumentam o alcance dos profissionais.</li>
-        <li>8. A tecnologia avança rápido, exigindo atualização constante.</li>
-        <li>9. Automação e inteligência artificial criam novas demandas.</li>
-        <li>10. A área permite crescimento profissional constante.</li>
+        <li>Trabalho remoto é comum em tecnologia.</li>
+        <li>Horários flexíveis atraem novos profissionais.</li>
+        <li>Home office permite conciliar estudos e trabalho.</li>
+        <li>Projetos podem ser entregues em diferentes fusos.</li>
+        <li>Empresas tech incentivam work-life balance.</li>
+        <li>Freelancers escolhem quando trabalhar.</li>
+        <li>Contratos híbridos são cada vez mais frequentes.</li>
+        <li>É possível viajar enquanto trabalha (nomadismo digital).</li>
+        <li>Startups permitem horários personalizados.</li>
+        <li>Plataformas oferecem oportunidades globais.</li>
       </ul>
     </section>
 
-    <section id="aba-salarios" class="tab-content">
-      <h2>Bons Salários</h2>
-      <img src="https://img.freepik.com/fotos-gratis/png-proposta-de-negocio-de-compra-de-maos-segurando-dinheiro_53876-143248.jpg" alt="Pessoa segurando dinheiro" />
-      <ul>
-        <li>1. Programadores estão entre os mais bem pagos.</li>
-        <li>2. Salários aumentam conforme a experiência.</li>
-        <li>3. Empresas estrangeiras pagam mais por talentos.</li>
-        <li>4. Freelancers têm potencial para ganhos altos.</li>
-        <li>5. Carreiras em tecnologia oferecem bônus e benefícios.</li>
-        <li>6. Profissionais de segurança cibernética ganham salários premium.</li>
-        <li>7. Salários para desenvolvedores mobile são competitivos.</li>
-        <li>8. Áreas especializadas como IA pagam acima da média.</li>
-        <li>9. Startups pagam bem para talentos que aceleram projetos.</li>
-        <li>10. O mercado valoriza constantemente novos conhecimentos.</li>
-      </ul>
+    <section id="sites" class="tab-content">
+      <h2>Por que ter um site?</h2>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmtLaJqdSp0RDZ2QEpW0atrnKHuLe0VOFYmg&s" alt="Importância de ter um site">
+      <p>10 razões para ter um site:</p>
+      <ol>
+        <li>Marca pessoal online.</li>
+        <li>Portfólio para mostrar seus projetos.</li>
+        <li>Clientes encontram você mais facilmente.</li>
+        <li>Maior visibilidade para seu trabalho.</li>
+        <li>Venda de produtos/serviços 24h por dia.</li>
+        <li>Controle completo sobre seu conteúdo.</li>
+        <li>Credibilidade profissional.</li>
+        <li>Facilidade para ser encontrado no Google.</li>
+        <li>Possibilidade de blog ou conteúdo autoral.</li>
+        <li>É seu espaço digital pessoal.</li>
+      </ol>
     </section>
 
-    <section id="aba-flexibilidade" class="tab-content">
-      <h2>Flexibilidade no Trabalho</h2>
-      <img src="https://i.gifer.com/OL9O.gif" alt="Trabalho remoto" />
-      <ul>
-        <li>1. Muitos programadores trabalham remotamente.</li>
-        <li>2. Horários flexíveis são comuns na área de TI.</li>
-        <li>3. Possibilidade de trabalhar para empresas internacionais.</li>
-        <li>4. Freelancer pode escolher projetos e horários.</li>
-        <li>5. Ambientes de trabalho modernos valorizam equilíbrio.</li>
-        <li>6. Trabalho remoto reduz tempo e custos de deslocamento.</li>
-        <li>7. Maior autonomia para organizar rotina pessoal.</li>
-        <li>8. Equipes globais colaboram de diferentes fusos horários.</li>
-        <li>9. Opção de trabalho híbrido (casa + escritório).</li>
-        <li>10. Flexibilidade melhora qualidade de vida e produtividade.</li>
-      </ul>
-    </section>
-
-    <section id="aba-site" class="tab-content">
-      <h2>Porque ter um site?</h2>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmtLaJqdSp0RDZ2QEpW0atrnKHuLe0VOFYmg&s" alt="Imagem sobre ter um site" />
-      <ul>
-        <li>1. Presença online é fundamental para negócios.</li>
-        <li>2. Sites ajudam a construir autoridade e confiança.</li>
-        <li>3. Facilita comunicação com clientes e público.</li>
-        <li>4. Pode ser uma vitrine para seus serviços e produtos.</li>
-        <li>5. Ajuda no posicionamento em motores de busca (SEO).</li>
-        <li>6. Suporte para e-commerce e vendas online.</li>
-        <li>7. Plataforma para publicar portfólio ou blog.</li>
-        <li>8. Integração com redes sociais amplia alcance.</li>
-        <li>9. Ferramenta de marketing poderosa e acessível.</li>
-        <li>10. Site é propriedade sua, diferente das redes sociais.</li>
-      </ul>
-    </section>
-
-    <section id="aba-contato" class="tab-content">
+    <section id="contato" class="tab-content">
       <h2>Contato</h2>
-      <p>Fiz para a professora Isabela Haddad 💻</p>
-      <p>E-mail: <a href="mailto:astrovictor59@gmail.com">astrovictor59@gmail.com</a></p>
-      <p>Telefone: <a href="tel:+55419997088269">41 99708-8269</a></p>
+      <p>Email: <a href="mailto:astrovictor59@gmail.com">astrovictor59@gmail.com</a></p>
+      <p>Telefone: <a href="tel:+5541997088269">(41) 99708-8269</a></p>
+      <p>Feito para a professora Isabela Haddad ❤️</p>
     </section>
   </main>
 
   <footer>
-    <p>Feito com ❤️ para fins educacionais por Victor Hugo 1b - 2025</p>
+    <p>Site criado para fins educacionais - 2025</p>
   </footer>
 
   <script>
-    // Script para trocar abas
-    const tabs = document.querySelectorAll('.tab-btn');
-    const contents = document.querySelectorAll('.tab-content');
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        // Remove active em todos
-        tabs.forEach(t => t.classList.remove('active'));
-        contents.forEach(c => c.classList.remove('active'));
-        // Ativa a aba clicada
-        tab.classList.add('active');
-        document.getElementById(tab.dataset.tab).classList.add('active');
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(tab => tab.classList.remove('active'));
+
+        button.classList.add('active');
+        document.getElementById(button.dataset.tab).classList.add('active');
       });
     });
 
-    // Tema escuro/claro toggle
-    const toggleThemeBtn = document.getElementById('toggle-theme');
-    const body = document.body;
-
-    function setTheme(dark) {
-      if (dark) {
-        body.classList.add('dark-theme');
-        toggleThemeBtn.textContent = '☀️';
-      } else {
-        body.classList.remove('dark-theme');
-        toggleThemeBtn.textContent = '🌙';
-      }
-      localStorage.setItem('temaEscuro', dark);
-    }
-
-    // Pega tema salvo no localStorage
-    const temaSalvo = localStorage.getItem('temaEscuro') === 'true';
-    setTheme(temaSalvo);
-
-    toggleThemeBtn.addEventListener('click', () => {
-      setTheme(!body.classList.contains('dark-theme'));
+    const toggleTheme = document.getElementById('toggle-theme');
+    toggleTheme.addEventListener('click', () => {
+      document.body.classList.toggle('dark-theme');
+      toggleTheme.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
     });
   </script>
 </body>

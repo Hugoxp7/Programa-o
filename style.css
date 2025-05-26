@@ -1,151 +1,174 @@
-/* Estilos gerais e tema claro */
-body {
+/* Variáveis de tema */
+:root {
+  --bg-color: #f4f4f4;
+  --text-color: #222;
+  --card-bg: #ffffff;
+  --nav-bg: #222;
+  --accent-color: #005eff;
+  --link-color: #333;
+  --footer-bg: #ddd;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1e1e1e;
+  --text-color: #f1f1f1;
+  --card-bg: #2c2c2c;
+  --nav-bg: #111;
+  --accent-color: #3399ff;
+  --link-color: #fff;
+  --footer-bg: #333;
+}
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  transition: background-color 0.5s ease, color 0.5s ease;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
 }
 
 nav {
-  background-color: #222;
+  background-color: var(--nav-bg);
   padding: 10px;
   text-align: center;
-  transition: background-color 0.5s ease;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-nav ul.tabs {
+nav ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 nav li {
-  margin: 5px 10px;
+  display: inline;
 }
 
-nav button.tab-btn {
-  background: none;
-  border: none;
+nav a {
   color: white;
+  text-decoration: none;
   font-weight: bold;
-  font-size: 16px;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: color 0.3s;
 }
 
-nav button.tab-btn:hover {
-  background-color: #005eff;
-  color: white;
-}
-
-nav button.tab-btn.active {
-  background-color: #005eff;
-  color: white;
-  cursor: default;
+nav a:hover {
+  color: var(--accent-color);
 }
 
 header {
-  background-color: #1f1f1f;
+  background-color: var(--nav-bg);
   color: white;
   text-align: center;
   padding: 40px 20px;
-  transition: background-color 0.5s ease, color 0.5s ease;
+  position: relative;
+}
+
+header img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg);
 }
 
 main {
   padding: 20px;
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
 }
 
-.tab-content {
-  display: none;
-  background: white;
+section {
+  background: var(--card-bg);
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  transition: background-color 0.5s ease, color 0.5s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: background 0.3s, color 0.3s;
 }
 
-.tab-content.active {
-  display: block;
-}
-
-.tab-content img {
+section img {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
   margin: 15px 0;
-  transition: filter 0.5s ease;
+}
+
+.botao {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.botao:hover {
+  background-color: #003fbb;
 }
 
 footer {
   text-align: center;
-  padding: 20px;
-  background-color: #ddd;
+  padding: 30px 15px;
+  background-color: var(--footer-bg);
   font-size: 14px;
-  transition: background-color 0.5s ease, color 0.5s ease;
+  color: var(--text-color);
+  transition: background-color 0.3s;
 }
 
-#toggle-theme {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  font-size: 28px;
-  cursor: pointer;
-  user-select: none;
-  transition: color 0.5s ease;
-  z-index: 1000;
+footer .redes {
+  margin-top: 10px;
 }
 
-/* Tema escuro */
-
-body.dark-theme {
-  background-color: #121212;
-  color: #e1e1e1;
+footer .redes a {
+  color: var(--link-color);
+  margin: 0 10px;
+  text-decoration: none;
 }
 
-body.dark-theme nav {
-  background-color: #333;
+footer .redes a:hover {
+  text-decoration: underline;
 }
 
-body.dark-theme nav button.tab-btn {
-  color: #ddd;
+.curiosidades {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 15px;
 }
 
-body.dark-theme nav button.tab-btn:hover {
-  background-color: #3377ff;
-  color: white;
+.curiosidades li {
+  margin-bottom: 10px;
+  line-height: 1.4;
 }
 
-body.dark-theme nav button.tab-btn.active {
-  background-color: #3377ff;
-  color: white;
+h2, h3 {
+  margin-bottom: 10px;
 }
 
-body.dark-theme header {
-  background-color: #222;
-  color: #eee;
-}
-
-body.dark-theme .tab-content {
-  background-color: #222;
-  color: #eee;
-  box-shadow: 0 0 10px rgba(255,255,255,0.1);
-}
-
-body.dark-theme footer {
-  background-color: #222;
-  color: #ccc;
-}
-
-body.dark-theme #toggle-theme {
-  color: #eee;
+p {
+  margin-bottom: 15px;
 }
