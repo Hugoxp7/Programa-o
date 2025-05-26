@@ -4,102 +4,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Site de Programação</title>
+  <title>Por que estudar programação?</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer>
-    function trocarAba(aba) {
-      document.getElementById('aba1').style.display = (aba === 'aba1') ? 'block' : 'none';
-      document.getElementById('aba2').style.display = (aba === 'aba2') ? 'block' : 'none';
+  <script>
+    function mostrarAba(abaId) {
+      document.querySelectorAll(".aba").forEach(el => el.style.display = "none");
+      document.getElementById(abaId).style.display = "block";
     }
   </script>
 </head>
 <body>
 
-  <div class="dedicatoria">Feito para a professora de programação Isabela Haddad</div>
-
   <nav>
     <ul>
-      <li><a href="#" onclick="trocarAba('aba1')">Por que estudar programação?</a></li>
-      <li><a href="#" onclick="trocarAba('aba2')">Por que ter um site?</a></li>
+      <li><a href="#" onclick="mostrarAba('estudar')">Por que estudar programação?</a></li>
+      <li><a href="#" onclick="mostrarAba('site')">Por que ter um site?</a></li>
     </ul>
   </nav>
 
-  <main>
-    <!-- ABA 1 -->
-    <div id="aba1">
-      <header>
-        <h1>Por que estudar programação?</h1>
-        <p>Descubra os motivos para aprender essa habilidade essencial do século XXI</p>
-        <img src="https://thumbs.dreamstime.com/b/crescente-demanda-29221120.jpg" alt="Pessoa programando" />
-      </header>
+  <!-- Aba 1 -->
+  <div id="estudar" class="aba">
+    <header>
+      <h1>Por que estudar programação?</h1>
+      <p>Descubra os motivos para aprender essa habilidade essencial do século XXI</p>
+      <img src="https://thumbs.dreamstime.com/b/crescente-demanda-29221120.jpg" alt="Pessoa programando" />
+    </header>
 
-      <section>
-        <h2>Alta demanda no mercado</h2>
+    <main>
+      <section id="mercado">
+        <h2>1. Alta demanda no mercado</h2>
         <img src="https://thumbs.dreamstime.com/b/crescente-demanda-29221120.jpg" alt="Gráfico de crescimento" />
         <p>Empresas de todos os setores estão em busca de profissionais capazes de criar e manter sistemas, sites e aplicativos.</p>
       </section>
 
-      <section>
-        <h2>Bons salários</h2>
+      <section id="salarios">
+        <h2>2. Bons salários</h2>
         <img src="https://img.freepik.com/fotos-gratis/png-proposta-de-negocio-de-compra-de-maos-segurando-dinheiro_53876-143248.jpg?semt=ais_hybrid&w=740" alt="Pessoa segurando dinheiro" />
         <p>Programadores estão entre os profissionais mais bem pagos, com oportunidades no Brasil e no exterior.</p>
       </section>
 
-      <section>
-        <h2>Estímulo ao raciocínio lógico</h2>
+      <section id="logica">
+        <h2>3. Estímulo ao raciocínio lógico</h2>
         <img src="https://media.istockphoto.com/id/1948997446/pt/foto/thinking-about-questions-and-getting-ideas-human-head-silhouette-and-gears.jpg?s=612x612&w=0&k=20&c=3sdLM0OkZDyFW9QR7IWxpiWKPm7Csato2yBE8Lc3Ul8=" alt="Cabeça com engrenagens representando pensamento" />
         <p>Aprender a programar ajuda a desenvolver o pensamento crítico e resolver problemas com eficiência.</p>
       </section>
 
-      <section>
-        <h2>Criar suas próprias ideias</h2>
+      <section id="criatividade">
+        <h2>4. Criar suas próprias ideias</h2>
         <img src="https://media.licdn.com/dms/image/v2/C4E12AQGGqIblkmh98w/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1544814555158?e=2147483647&v=beta&t=rFqHajCjGc2TUtXpptlSpJjuoY4PsLwgVT03Mtg5API" alt="Ilustração de ideia e criatividade" />
-        <p>Com programação, você pode transformar ideias em realidade: sites, apps, jogos e muito mais.</p>
+        <p>Com conhecimento em programação, você pode transformar ideias em realidade: sites, apps, jogos e muito mais.</p>
       </section>
 
-      <section>
-        <h2>Como começar?</h2>
+      <section id="comecar">
+        <h2>5. Como começar a programar?</h2>
         <p>Você pode começar aprendendo linguagens como HTML, CSS, JavaScript e Python. Existem muitos cursos gratuitos online!</p>
         <a class="botao" href="https://www.cursoemvideo.com/" target="_blank">Acessar cursos gratuitos</a>
       </section>
-    </div>
+    </main>
+  </div>
 
-    <!-- ABA 2 -->
-    <div id="aba2" style="display:none;">
-      <header>
-        <h1>Por que ter um site?</h1>
-        <p>Entenda os benefícios de criar seu próprio espaço na internet</p>
-        <img src="https://cdn.pixabay.com/photo/2016/01/19/15/05/idea-1149982_1280.jpg" alt="Ilustração de ideias" />
-      </header>
+  <!-- Aba 2 -->
+  <div id="site" class="aba" style="display: none;">
+    <header>
+      <h1>Por que ter um site?</h1>
+      <p>Entenda os benefícios de criar seu próprio espaço na internet</p>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmtLaJqdSp0RDZ2QEpW0atrnKHuLe0VOFYmg&s" alt="Imagem sobre ter um site" />
+    </header>
 
+    <main>
       <section>
-        <h2>1. Visibilidade pessoal ou profissional</h2>
-        <p>Ter um site permite mostrar seus trabalhos, portfólio ou empresa para o mundo inteiro, 24 horas por dia.</p>
-      </section>
-
-      <section>
-        <h2>2. Controle total sobre seu conteúdo</h2>
-        <p>Diferente das redes sociais, no seu próprio site você tem liberdade total para personalizar tudo do seu jeito.</p>
+        <h2>1. Presença online</h2>
+        <p>Ter um site é uma forma eficaz de mostrar quem você é ou divulgar sua marca, serviço ou ideia para o mundo.</p>
       </section>
 
       <section>
-        <h2>3. Credibilidade</h2>
-        <p>Um site bem feito transmite profissionalismo e aumenta a confiança de clientes ou recrutadores.</p>
+        <h2>2. Controle total do conteúdo</h2>
+        <p>Você decide o que mostrar, como mostrar e quando atualizar. Ao contrário de redes sociais, seu site é seu.</p>
       </section>
 
-      <section id="contato">
-        <h2>Entre em contato comigo</h2>
-        <p>Email: <a href="mailto:astrovictor59@gmail.com">astrovictor59@gmail.com</a></p>
-        <p>Telefone: <a href="tel:+5541997088269">(41) 99708-8269</a></p>
+      <section>
+        <h2>3. Portfólio e oportunidades</h2>
+        <p>Um site pode servir como um currículo online ou vitrine de projetos, facilitando oportunidades profissionais.</p>
       </section>
-    </div>
-  </main>
+    </main>
+  </div>
 
   <footer>
-    <p>Feito com ❤️ por Victor Hugo - 2025</p>
+    <p>Feito com ❤️ para fins educacionais por Victor Hugo 1B - 2025</p>
+    <p style="font-size: 13px;">Fiz para a professora de programação Isabela Haddad</p>
     <div class="redes">
       <a href="#">Instagram</a> | <a href="#">GitHub</a> | <a href="#">LinkedIn</a>
     </div>
+    <p>📧 astrovictor59@gmail.com | 📞 (41) 99708-8269</p>
   </footer>
 
 </body>
