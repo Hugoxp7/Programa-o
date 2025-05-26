@@ -14,26 +14,40 @@ nav {
   transition: background-color 0.5s ease;
 }
 
-nav ul {
+nav ul.tabs {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 nav li {
-  display: inline;
-  margin: 0 15px;
+  margin: 5px 10px;
 }
 
-nav a {
+nav button.tab-btn {
+  background: none;
+  border: none;
   color: white;
-  text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease;
+  font-size: 16px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-nav a:hover {
-  color: #79aaff;
+nav button.tab-btn:hover {
+  background-color: #005eff;
+  color: white;
+}
+
+nav button.tab-btn.active {
+  background-color: #005eff;
+  color: white;
+  cursor: default;
 }
 
 header {
@@ -44,21 +58,14 @@ header {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-header img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-top: 20px;
-  transition: filter 0.5s ease;
-}
-
 main {
   padding: 20px;
   max-width: 900px;
   margin: auto;
 }
 
-section {
+.tab-content {
+  display: none;
   background: white;
   padding: 20px;
   margin-bottom: 20px;
@@ -67,29 +74,16 @@ section {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-section img {
+.tab-content.active {
+  display: block;
+}
+
+.tab-content img {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
   margin: 15px 0;
   transition: filter 0.5s ease;
-}
-
-.botao {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #005eff;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  margin-top: 10px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.botao:hover {
-  background-color: #0044cc;
-  cursor: pointer;
 }
 
 footer {
@@ -100,151 +94,58 @@ footer {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-footer .redes {
-  margin-top: 10px;
-}
-
-footer .redes a {
-  color: #333;
-  margin: 0 10px;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-footer .redes a:hover {
-  text-decoration: underline;
-  color: #005eff;
-}
-
-/* Contato fixo no canto inferior direito */
-#contato-fixo {
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  background: #005eff;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 12px;
-  font-size: 14px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-  z-index: 1000;
-  transition: background-color 0.3s ease;
-}
-
-#contato-fixo:hover {
-  background-color: #0044cc;
-  cursor: pointer;
-}
-
-/* Tema escuro */
-.dark-theme {
-  background-color: #121212;
-  color: #eee;
-  transition: background-color 0.5s ease, color 0.5s ease;
-}
-
-.dark-theme nav {
-  background-color: #111;
-}
-
-.dark-theme nav a {
-  color: #ccc;
-}
-
-.dark-theme nav a:hover {
-  color: #79aaff;
-}
-
-.dark-theme header {
-  background-color: #000;
-  color: #eee;
-}
-
-.dark-theme header img {
-  filter: brightness(0.85);
-}
-
-.dark-theme main {
-  background-color: #121212;
-}
-
-.dark-theme section {
-  background-color: #1e1e1e;
-  color: #ddd;
-  box-shadow: 0 0 15px rgba(0,0,0,0.6);
-}
-
-.dark-theme section img {
-  filter: brightness(0.9);
-}
-
-.dark-theme a {
-  color: #79aaff;
-}
-
-.dark-theme a:hover {
-  color: #c2d1ff;
-}
-
-.dark-theme .botao {
-  background-color: #3399ff;
-  color: #eee;
-}
-
-.dark-theme .botao:hover {
-  background-color: #2277ee;
-  cursor: pointer;
-}
-
-.dark-theme footer {
-  background-color: #222;
-  color: #bbb;
-}
-
-.dark-theme footer .redes a {
-  color: #79aaff;
-}
-
-.dark-theme footer .redes a:hover {
-  color: #c2d1ff;
-}
-
-/* Transição suave para tudo */
-* {
-  transition: all 0.3s ease;
-}
-
-/* Emoji de troca de tema */
 #toggle-theme {
   position: fixed;
   top: 15px;
   right: 15px;
-  font-size: 26px;
+  font-size: 28px;
   cursor: pointer;
   user-select: none;
-  transition: color 0.3s ease;
-  z-index: 1001;
+  transition: color 0.5s ease;
+  z-index: 1000;
 }
 
-#toggle-theme:hover {
-  color: #3399ff;
+/* Tema escuro */
+
+body.dark-theme {
+  background-color: #121212;
+  color: #e1e1e1;
 }
 
-/* Ajustes para responsividade */
-@media (max-width: 600px) {
-  nav li {
-    display: block;
-    margin: 10px 0;
-  }
+body.dark-theme nav {
+  background-color: #333;
+}
 
-  #contato-fixo {
-    font-size: 12px;
-    padding: 10px 14px;
-  }
+body.dark-theme nav button.tab-btn {
+  color: #ddd;
+}
 
-  #toggle-theme {
-    font-size: 22px;
-    top: 10px;
-    right: 10px;
-  }
+body.dark-theme nav button.tab-btn:hover {
+  background-color: #3377ff;
+  color: white;
+}
+
+body.dark-theme nav button.tab-btn.active {
+  background-color: #3377ff;
+  color: white;
+}
+
+body.dark-theme header {
+  background-color: #222;
+  color: #eee;
+}
+
+body.dark-theme .tab-content {
+  background-color: #222;
+  color: #eee;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+body.dark-theme footer {
+  background-color: #222;
+  color: #ccc;
+}
+
+body.dark-theme #toggle-theme {
+  color: #eee;
 }
