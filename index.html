@@ -2,116 +2,106 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Programação: Por que Estudar?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Por que estudar programação?</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <div id="toggle-theme">🌙</div>
-
-  <nav>
-    <ul class="tabs">
-      <li><button class="tab-btn active" data-tab="intro">Início</button></li>
-      <li><button class="tab-btn" data-tab="salarios">Salários</button></li>
-      <li><button class="tab-btn" data-tab="flexibilidade">Flexibilidade</button></li>
-      <li><button class="tab-btn" data-tab="sites">Por que ter um site?</button></li>
-      <li><button class="tab-btn" data-tab="contato">Contato</button></li>
-    </ul>
-  </nav>
-
-  <header>
-    <h1>Por que estudar programação?</h1>
+<body class="light-theme">
+  <header class="fade-in">
+    <div class="top-bar">
+      <h1>Por que estudar programação?</h1>
+      <button id="theme-toggle">🌓</button>
+    </div>
     <p>Descubra os motivos para aprender essa habilidade essencial do século XXI</p>
   </header>
 
+  <nav>
+    <ul>
+      <li><button onclick="showTab('home')">Início</button></li>
+      <li><button onclick="showTab('salario')">💰 Salário</button></li>
+      <li><button onclick="showTab('site')">🌐 Por que ter um site?</button></li>
+      <li><button onclick="showTab('flexibilidade')">🕒 Flexibilidade</button></li>
+    </ul>
+  </nav>
+
   <main>
-    <section id="intro" class="tab-content active">
-      <h2>Introdução</h2>
-      <p>Aprender programação abre portas para um mercado aquecido, salários competitivos, flexibilidade de trabalho e desenvolvimento de projetos próprios. Vamos explorar mais!</p>
-    </section>
-
-    <section id="salarios" class="tab-content">
-      <h2>Salários</h2>
-      <p>10 curiosidades sobre salários de programadores:</p>
-      <ol>
-        <li>Programadores full stack estão entre os mais bem pagos.</li>
-        <li>Salários são maiores com domínio de mais linguagens.</li>
-        <li>Certificações aumentam o valor do profissional.</li>
-        <li>Programadores mobile ganham muito no exterior.</li>
-        <li>Empresas valorizam soft skills junto com técnicas.</li>
-        <li>Freelancers podem ultrapassar CLTs em renda.</li>
-        <li>Desenvolvedores web têm alta procura.</li>
-        <li>Mercado internacional paga em dólar ou euro.</li>
-        <li>Benefícios complementam bons salários.</li>
-        <li>Remuneração cresce com experiência.</li>
-      </ol>
-    </section>
-
-    <section id="flexibilidade" class="tab-content">
-      <h2>Flexibilidade</h2>
-      <p>10 curiosidades sobre a flexibilidade na área:</p>
+    <section id="home" class="tab active">
+      <h2>🚀 Introdução</h2>
+      <p>Aprender programação abre portas para diversas oportunidades no mundo digital. Aqui estão algumas razões:</p>
       <ul>
-        <li>Trabalho remoto é comum em tecnologia.</li>
-        <li>Horários flexíveis atraem novos profissionais.</li>
-        <li>Home office permite conciliar estudos e trabalho.</li>
-        <li>Projetos podem ser entregues em diferentes fusos.</li>
-        <li>Empresas tech incentivam work-life balance.</li>
-        <li>Freelancers escolhem quando trabalhar.</li>
-        <li>Contratos híbridos são cada vez mais frequentes.</li>
-        <li>É possível viajar enquanto trabalha (nomadismo digital).</li>
-        <li>Startups permitem horários personalizados.</li>
-        <li>Plataformas oferecem oportunidades globais.</li>
+        <li>Alta demanda no mercado</li>
+        <li>Bons salários</li>
+        <li>Estímulo ao raciocínio lógico</li>
+        <li>Criação de ideias próprias</li>
       </ul>
     </section>
 
-    <section id="sites" class="tab-content">
-      <h2>Por que ter um site?</h2>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmtLaJqdSp0RDZ2QEpW0atrnKHuLe0VOFYmg&s" alt="Importância de ter um site">
-      <p>10 razões para ter um site:</p>
-      <ol>
-        <li>Marca pessoal online.</li>
-        <li>Portfólio para mostrar seus projetos.</li>
-        <li>Clientes encontram você mais facilmente.</li>
-        <li>Maior visibilidade para seu trabalho.</li>
-        <li>Venda de produtos/serviços 24h por dia.</li>
-        <li>Controle completo sobre seu conteúdo.</li>
-        <li>Credibilidade profissional.</li>
-        <li>Facilidade para ser encontrado no Google.</li>
-        <li>Possibilidade de blog ou conteúdo autoral.</li>
-        <li>É seu espaço digital pessoal.</li>
-      </ol>
+    <section id="salario" class="tab">
+      <h2>💰 10 Curiosidades sobre salários</h2>
+      <ul>
+        <li>1️⃣ Desenvolvedores são bem pagos no mundo todo</li>
+        <li>2️⃣ O salário médio de um programador no Brasil é R$6.000</li>
+        <li>3️⃣ Programadores remotos ganham em dólar</li>
+        <li>4️⃣ A área de dados tem os maiores salários</li>
+        <li>5️⃣ Desenvolvedores fullstack são mais valorizados</li>
+        <li>6️⃣ Certificações aumentam o salário</li>
+        <li>7️⃣ Freelancers podem ganhar mais que CLT</li>
+        <li>8️⃣ A valorização cresce com experiência</li>
+        <li>9️⃣ Saber inglês pode dobrar seu salário</li>
+        <li>🔟 Programadores podem criar seu próprio negócio</li>
+      </ul>
     </section>
 
-    <section id="contato" class="tab-content">
-      <h2>Contato</h2>
-      <p>Email: <a href="mailto:astrovictor59@gmail.com">astrovictor59@gmail.com</a></p>
-      <p>Telefone: <a href="tel:+5541997088269">(41) 99708-8269</a></p>
-      <p>Feito para a professora Isabela Haddad ❤️</p>
+    <section id="site" class="tab">
+      <h2>🌐 Por que ter um site?</h2>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmtLaJqdSp0RDZ2QEpW0atrnKHuLe0VOFYmg&s" alt="Ter um site" />
+      <ul>
+        <li>1️⃣ Ter presença digital é essencial</li>
+        <li>2️⃣ Um site funciona 24h por dia</li>
+        <li>3️⃣ Constrói autoridade no assunto</li>
+        <li>4️⃣ Aumenta a visibilidade</li>
+        <li>5️⃣ Gera oportunidades de negócio</li>
+        <li>6️⃣ Pode servir como portfólio</li>
+        <li>7️⃣ É personalizável</li>
+        <li>8️⃣ É uma fonte de renda</li>
+        <li>9️⃣ Pode atrair clientes</li>
+        <li>🔟 Ajuda na divulgação de projetos</li>
+      </ul>
+    </section>
+
+    <section id="flexibilidade" class="tab">
+      <h2>🕒 Flexibilidade no trabalho</h2>
+      <ul>
+        <li>1️⃣ Você pode trabalhar de qualquer lugar</li>
+        <li>2️⃣ Horários flexíveis são comuns</li>
+        <li>3️⃣ Muitos trabalham de casa</li>
+        <li>4️⃣ Há liberdade criativa</li>
+        <li>5️⃣ Possibilidade de freelancer</li>
+        <li>6️⃣ Pode escolher projetos</li>
+        <li>7️⃣ Trabalhar para o exterior</li>
+        <li>8️⃣ Definir sua carga horária</li>
+        <li>9️⃣ Conciliar com estudos</li>
+        <li>🔟 Ideal para nômades digitais</li>
+      </ul>
     </section>
   </main>
 
   <footer>
-    <p>Site criado para fins educacionais - 2025</p>
+    <p>Feito com ❤️ para fins educacionais - <strong>Victor Hugo</strong> | Feito para a professora <strong>Isabela Haddad</strong></p>
+    <p><strong>Contato:</strong> astrovictor59@gmail.com | WhatsApp: (41) 99708-8269</p>
+    <p><a href="https://instagram.com/hugozxp7" target="_blank">Instagram: @hugozxp7</a></p>
   </footer>
 
   <script>
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
+    function showTab(id) {
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
 
-    tabButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        tabContents.forEach(tab => tab.classList.remove('active'));
-
-        button.classList.add('active');
-        document.getElementById(button.dataset.tab).classList.add('active');
-      });
-    });
-
-    const toggleTheme = document.getElementById('toggle-theme');
-    toggleTheme.addEventListener('click', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
       document.body.classList.toggle('dark-theme');
-      toggleTheme.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
+      document.body.classList.toggle('light-theme');
     });
   </script>
 </body>
